@@ -53,10 +53,14 @@ function Home() {
   const { colors } = useContext(ThemeContext)
 
   useEffect(() => {
-    if (hasLocationPermission()) {
-      getLocation()
-    }
-  }, [])
+    const fetchData = async () => {
+      const hasPermission = await hasLocationPermission();
+      if (hasPermission) {
+        getLocation();
+      }
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     if (location?.coords?.latitude && location?.coords?.longitude) {
