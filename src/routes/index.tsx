@@ -6,6 +6,7 @@ import Search from '../pages/Search'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { ThemeContext } from 'styled-components'
+import Plances from '../pages/Plances'
 
 const Tab = createBottomTabNavigator()
 
@@ -41,6 +42,16 @@ export default function Routes() {
           tabBarLabel: 'Search',
           tabBarIcon: ({ color, size }) => (
             <Icon name="search" color={color} size={size} />
+          ),
+        }}
+      />
+       <Tab.Screen
+        name="Plances"
+        component={Plances}
+        options={{
+          tabBarLabel: 'Plances',
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="map" color={color} size={size} />
           ),
         }}
       />
