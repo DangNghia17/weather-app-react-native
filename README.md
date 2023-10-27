@@ -2,7 +2,8 @@
 
 '.env' para '.env'(Weather API)
 # Dùng nodejs v16 nha
-
+"react": "^18.2.0",
+"react-native": "^0.70.13",
 
 Muốn chạy db phải vào sửa url restAPI trong các file data :
 1. terminal : ipconfig
