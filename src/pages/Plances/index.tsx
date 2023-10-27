@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { AppRegistry, Image, StyleSheet, Text, View, } from "react-native";
+import {  Image, Text, View, } from "react-native";
 
 import { Attractions } from "./data";
 import styles from "./styles"
 const Plances = () => {
-  const [attractions, setAttractions] = useState(Attractions);
+  const [attractions] = useState(Attractions);
 
   return (
     <View style={styles.container}>

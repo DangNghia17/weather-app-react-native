@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { ThemeContext } from 'styled-components'
 import Plances from '../pages/Plances'
+import User from '../pages/User'
 
 const Tab = createBottomTabNavigator()
 
@@ -52,6 +53,16 @@ export default function Routes() {
           tabBarLabel: 'Plances',
           tabBarIcon: ({ color, size }) => (
             <Icon name="map" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="User"
+        component={User}
+        options={{
+          tabBarLabel: 'User',
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="user" color={color} size={size} />
           ),
         }}
       />
