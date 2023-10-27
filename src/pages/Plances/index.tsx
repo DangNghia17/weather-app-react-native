@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {  Image, Text, View, } from "react-native";
+
+import { Image, Text, View, } from "react-native";
 
 import { Attractions } from "./data";
 import styles from "./styles"
@@ -8,7 +9,7 @@ const Plances = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hanoi, Vietnam</Text>
+      <Text style={styles.title}>Địa điểm Việt Nam</Text>
       <View style={styles.attractionsList}>
         {attractions.map((attraction, index) => (
           <View key={index} style={styles.attraction}>

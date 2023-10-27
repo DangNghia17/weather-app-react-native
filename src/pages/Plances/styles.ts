@@ -20,12 +20,11 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10,
     alignItems: "flex-start",
-    
+
   },
   attraction: {
     margin: 15,
     alignItems: "center",
-    
   },
   image: {
     width: 150,

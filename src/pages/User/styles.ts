@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
   },
   forgot:{
-    left: 205,
+    left: 230,
     top: 20,
     
   },
@@ -50,46 +50,86 @@ const styles = StyleSheet.create({
 
   input: {
     height: 40,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 10,
     padding: 15,
     color: "#fff",
+    borderColor: "white"
 
   },
   
   button: {
-    width: 250,
-    left: 50,
+    height: 50,
+    borderRadius: 50,
+    borderWidth: 2,
     top:40,
-
+    backgroundColor: "#00A9FF"
 
   },
-  
+  buttonText:{
+    color: "#fff",
+    left:135,
+    top: 13,
+    fontWeight: "bold",
+  },
+
   button1: {
     top:70,
     margin: 30,
     height: 50,
-  },
-  button2: {
-    top:15,
-    margin: 30,
-    height: 50,
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: "red"
 
   },
-  
+ 
+
+  button2: {
+    margin: 30,
+    height: 50,
+    top:20,
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: "blue"
+  },
+
+  buttonText1:{
+    color: "red",
+    left:108,
+    top: 13,
+    fontWeight: "bold",
+
+  },
+  buttonText2:{
+    color: "blue",
+    left:96,
+    top: 13,
+    fontWeight: "bold",
+
+  },
   or:{
+    flexDirection: "row",
+    gap: 10,
   },
   textor:{
     color: "#fff",
     top: 80,
-    left:150,
+    left:65,
     fontSize: 16,
     fontWeight: "600",
 
   },
+  line: {
+    top: 92,
+    left:65,
+    width: 100,
+    height: 0.4,
+    backgroundColor: "#D0D4CA",
+  },
   signup:{
     flexDirection: "row",
-    top: 10,
+    top: 20,
+    left: 40,
 
   },
   textsignup:{
@@ -108,7 +148,7 @@ const styles = StyleSheet.create({
   },
   copyright: {
     fontSize: 12,
-    top: 30, 
+    top: 25, 
     color: "#fff",
     fontWeight: "bold",
 

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import Home from '../pages/Home'
 import Search from '../pages/Search'
+import NewsPage from '../pages/New/NewsPage'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -54,6 +55,16 @@ export default function Routes() {
           tabBarIcon: ({ color, size }) => (
             <Icon name="map" color={color} size={size} />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="News"
+        component={NewsPage}
+        options={{
+          tabBarLabel: 'New' ,
+          tabBarIcon: ({color , size}) => (
+            <Icon name="newspaper-outline" color={color} size={size}/>
+          ) ,
         }}
       />
       <Tab.Screen

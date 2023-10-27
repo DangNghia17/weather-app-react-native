@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import {
@@ -8,18 +7,15 @@ import {
   Button,
   TextInput,
   Image,
+  TouchableOpacity,
 } from 'react-native'
 import styles from './styles'
 
-const User = ( ) => {
-
-
-
-
+const User = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Sign In</Text>
+        <Text style={styles.title}>Đăng Nhập</Text>
       </View>
       <View style={styles.body}>
         <View style={styles.form}>
@@ -27,32 +23,46 @@ const User = ( ) => {
           <TextInput style={styles.input} />
         </View>
         <View style={styles.form}>
-          <Text style={styles.label}>Password:</Text>
+          <Text style={styles.label}>Mật khẩu:</Text>
           <TextInput style={styles.input} />
         </View>
 
         <View style={styles.forgot}>
-          <Text style={styles.forgottext}>Forgot your Password?</Text>
+          <Text style={styles.forgottext}>Quên mật khẩu?</Text>
         </View>
-        <View style={styles.button}>
-          <Button title="SIGN IN" onPress={() => console.log('Sign In')} />
-        </View>
-      </View>
-      <View style={styles.or}>
-        <Text  style={styles.textor}>Or Sign In with</Text>
+
+       
+
+        <View>
+        <TouchableOpacity style={[styles.button]}>
+          <Text style={styles.buttonText}>ĐĂNG NHẬP</Text>
+        </TouchableOpacity>
       </View>
 
-      <View style={styles.button1}>
-        <Button color="red" title="Sign in with Google " />
       </View>
-      <View style={styles.button2}>
-        <Button title="Sign in with Facebook " />
+      <View style={styles.or}>
+        <View style={styles.line} />
+        <Text style={styles.textor}>Hoặc</Text>
+        <View style={styles.line} />
+      </View>
+
+      <View >
+        <TouchableOpacity
+          style={[styles.button1]}>
+          <Text style={styles.buttonText1}>Sign in with Google</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View>
+        <TouchableOpacity style={[styles.button2]}>
+          <Text style={styles.buttonText2}>Sign in with Facebook</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.signup}>
-          <Text style={styles.donthave}>Don't have account?</Text>
-          <Text style={styles.textsignup}>Sign Up</Text>
-        </View>
+        <Text style={styles.donthave}>Bạn chưa có tài khoản?</Text>
+        <Text style={styles.textsignup}>Đăng ký</Text>
+      </View>
 
       <View style={styles.footer}>
         <Text style={styles.copyright}>WeatherApp</Text>
