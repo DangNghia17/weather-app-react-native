@@ -43,7 +43,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentText: {
-    color : "white"
+    color : "white",
+    height : 100,
+    marginTop : 10
   },
   title: {
     color: "white",
