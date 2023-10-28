@@ -43,7 +43,6 @@ import WeatherData from '../../types/WeatherData'
 import weatherImage from '../../utils/weatherImage'
 
 import { WEATHER_API_KEY } from '@env'
-import styles from "../Plances/styles";
 
 
 function Home() {
