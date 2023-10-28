@@ -43,6 +43,7 @@ import WeatherData from '../../types/WeatherData'
 import weatherImage from '../../utils/weatherImage'
 
 import { WEATHER_API_KEY } from '@env'
+import styles from "../Plances/styles";
 
 
 function Home() {
@@ -252,7 +253,9 @@ const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
                 </>
               )}
               <ReloadButton onPress={() => LoadWeatherData()}>
-                <Icon name="reload-circle" size={45} color={colors.primary} />
+
+                <Image source={require('../../assets/refresh.png')} style={{width: 40 , height: 40 , marginTop : 30}} />
+
               </ReloadButton>
             </Temperature>
 

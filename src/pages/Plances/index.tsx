@@ -1,25 +1,53 @@
-import React, { useState } from "react";
-import { Image, Text, View, } from "react-native";
-
-import { Attractions } from "./data";
+import React, { useEffect, useState } from 'react';
+import {FlatList, Image, SafeAreaView, Text, TouchableOpacity, View,} from "react-native";
+import { fetchDataAndExport, Item, init } from "./data";
 import styles from "./styles"
+
+init();
+
+
 const Plances = () => {
-  const [attractions, setAttractions] = useState(Attractions);
+  const [plancesData, setPlancesData] = useState<Item[]>([]);
+
+  const renderItem = ({ item }: { item: Item }) => (
+    <View style={styles.cardContainer}>
+      <TouchableOpacity onPress={() => {}}>
+        <View style={styles.container}>
+          <Image source={{ uri: item.image }} style={styles.roundedImage} />
+          <Image source={require('../../assets/Plances/fivestar.png')} style={styles.fiveStar} />
+        </View>
+          <View style={styles.contentContainer}>
+            <Text style={styles.contentText}>{item.name}</Text>
+            <Text style={styles.contentLocationText}>{item.location}</Text>
+          </View>
+      </TouchableOpacity>
+    </View>
+  );
+
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchDataAndExport();
+        setPlancesData(data);
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    };
+
+    loadData();
+  }, []);
+
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Địa điểm Việt Nam</Text>
-      <View style={styles.attractionsList}>
-        {attractions.map((attraction, index) => (
-          <View key={index} style={styles.attraction}>
-            <Image source={attraction.image} style={styles.image} />
-            <Text style={styles.name}>{attraction.name}</Text>
-            <Text style={styles.location} >{attraction.location}</Text>
-            <Image source={attraction.rate} style={styles.rate} />
-
-          </View>
-        ))}
-      </View>
+      <FlatList
+        data={plancesData}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        horizontal={false}
+      />
     </View>
   );
 };
