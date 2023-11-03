@@ -7,7 +7,7 @@ import { Form } from '@unform/mobile'
 import Input from '../../components/Input'
 import ThemeSwitcher from '../../components/ThemeSwitcher'
 
-import api from '../../services/api'
+import apiOpenweather from '../../services/apiOpenweather'
 import * as Yup from 'yup'
 
 import WeatherData from '../../types/WeatherData'
@@ -23,7 +23,7 @@ import {
   Temperature,
   TemperatureText,
   Text,
-  Content,
+  Content, styles,
 } from './styles'
 import getValidationErrors from '../../utils/getValidationErrors'
 import weatherImage from '../../utils/weatherImage'
@@ -55,7 +55,7 @@ function Search() {
       await schema.validate(data, {
         abortEarly: false,
       })
-      const response = await api.get(
+      const response = await apiOpenweather.get(
         `/weather?q=${data.search}&appid=${ WEATHER_API_KEY }&units=metric&lang=vi`,
       )
       setWeatherData(response.data)

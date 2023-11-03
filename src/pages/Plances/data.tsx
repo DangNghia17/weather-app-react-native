@@ -1,17 +1,18 @@
-export interface Item {
-  id: string,
-  name: string,
-  location: string,
-  image: string,
-  rate: string,
-}
+import { axios_API_Instance } from "../../services/constants";
 
-export const apiUrl = 'http://192.168.1.18:3000/api/places';
+export interface Item {
+  id: string;
+  name: string;
+  location: string;
+  image: string;
+  rate: string;
+}
 
 export const fetchData = async (): Promise<Item[]> => {
   try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+    const response = await axios_API_Instance.get('/places');
+    const data = response.data;
+    // console.log('Data from API:', data);
     return data.map((item: { _id: { toString: () => string }; name: string; location: string; image: string; rate: string }) => ({
       id: item._id.toString(),
       name: item.name,
@@ -28,8 +29,7 @@ export const fetchData = async (): Promise<Item[]> => {
 export const loadData = async () => {
   try {
     const data = await fetchData();
-    console.log('Data:', data);
-    // Xử lý dữ liệu tại đây
+    // console.log('Data:', data);
   } catch (error) {
     console.error('Error loading data:', error);
   }

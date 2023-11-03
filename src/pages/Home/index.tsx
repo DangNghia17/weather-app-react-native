@@ -32,7 +32,7 @@ import {
 import Geolocation from 'react-native-geolocation-service'
 
 import appConfig from '../../../app.json'
-import api from '../../services/api'
+import apiOpenweather from '../../services/apiOpenweather'
 import { capitalize } from '../../utils/capitalize'
 
 import WorldMap from '../../assets/WorldMap/WorldMap.png'
@@ -71,7 +71,7 @@ function Home() {
  async function LoadWeatherData() {
    setLoadingData(true)
    try {
-     const { data } = await api.get(
+     const { data } = await apiOpenweather.get(
        `weather?lat=${location?.coords?.latitude}&lon=${location?.coords?.longitude}&appid=${ WEATHER_API_KEY }&units=metric&lang=vi`,
      )
      setWeatherData(data);

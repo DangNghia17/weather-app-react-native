@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import {StyleSheet} from "react-native";
 
 export const Container = styled.SafeAreaView`
   background: ${props => props.theme.colors.background};
@@ -67,3 +68,9 @@ export const Image = styled.Image`
   width: 200px;
   height: 200px;
 `
+export const styles = StyleSheet.create({
+  imageSearch:{
+    height : 30 ,
+    width : 30,
+  }
+})

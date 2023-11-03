@@ -12,6 +12,7 @@ import { useField } from '@unform/core'
 
 import { Container, TextInput, Icon } from './styles'
 import { ThemeContext } from 'styled-components'
+import {Image, Main, styles} from "../../pages/Search/styles";
 
 interface InputProps extends TextInputProps {
   name: string
@@ -75,13 +76,8 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
 
   return (
     <Container style={containerStyle} isFocused={isFocused} isErrored={!!error}>
-      <Icon
-        name={icon}
-        size={20}
-        color={
-          isFocused || isFilled ? colors.inputIconFill : colors.inputIconNotFill
-        }
-      />
+      <Image source={require('../../assets/search_white.png')} style={styles.imageSearch}/>
+
       <TextInput
         ref={inputElementRef}
         keyboardAppearance="dark"
