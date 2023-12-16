@@ -7,7 +7,7 @@ import React, {
   useState,
   useContext,
 } from 'react'
-import { TextInputProps } from 'react-native'
+import {TextInputProps, TouchableOpacity} from 'react-native'
 import { useField } from '@unform/core'
 
 import { Container, TextInput, Icon } from './styles'
@@ -90,6 +90,9 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
         }}
         {...rest}
       />
+      <TouchableOpacity>
+      <Image source={require('../../assets/microphone-solid.png')} style={styles.imageVoice}/>
+      </TouchableOpacity>
     </Container>
   )
 }

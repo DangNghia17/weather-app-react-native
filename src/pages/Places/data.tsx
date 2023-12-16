@@ -2,29 +2,39 @@ import { axios_API_Instance } from "../../services/constants";
 
 export interface Item {
   id: string;
-  name: string;
-  location: string;
+  title: string;
+  link: string;
   image: string;
-  rate: string;
+  category: string;
+  price: string;
 }
 
 export const fetchData = async (): Promise<Item[]> => {
   try {
     const response = await axios_API_Instance.get('/places');
     const data = response.data;
-    // console.log('Data from API:', data);
-    return data.map((item: { _id: { toString: () => string }; name: string; location: string; image: string; rate: string }) => ({
+    // console.log('Data from API:', data); // Kiểm tra data ở đây
+    return data.map((item: {
+      _id: { toString: () => string };
+      category: string;
+      image: string;
+      link: string;
+      price: string;
+      title: string;
+    }) => ({
       id: item._id.toString(),
-      name: item.name,
-      location: item.location,
+      title: item.title, // Sử dụng trường title
+      link: item.link, // Sử dụng trường link
       image: item.image,
-      rate: item.rate,
+      category: item.category, // Sử dụng trường category
+      price: item.price, // Sử dụng trường price
     }));
   } catch (error) {
     console.error('Fetch data error:', error);
     throw error;
   }
 };
+
 
 export const loadData = async () => {
   try {

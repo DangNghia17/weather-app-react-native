@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 
 import Home from '../pages/Home'
 import Search from '../pages/Search'
-import NewsPage from '../pages/New/NewsPage'
+import Index from '../pages/New'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { ThemeContext } from 'styled-components'
-import Plances from '../pages/Plances'
+import Places from '../pages/Places'
 import User from '../pages/User'
 import {Image} from "react-native";
 
@@ -52,7 +52,7 @@ export default function Routes() {
       />
        <Tab.Screen
         name="Plances"
-        component={Plances}
+        component={Places}
         options={{
           tabBarLabel: 'Plances',
           tabBarIcon: ({ color, size }) => (
@@ -63,7 +63,7 @@ export default function Routes() {
       />
       <Tab.Screen
         name="News"
-        component={NewsPage}
+        component={Index}
         options={{
           tabBarLabel: 'New' ,
           tabBarIcon: ({color , size}) => (

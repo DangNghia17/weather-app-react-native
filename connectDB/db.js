@@ -17,56 +17,48 @@ const connectToMongoDB = async () => {
   }
 };
 
-
 const newsSchema = new mongoose.Schema({
+  title: String,
+  link: String,
+  image: String,
   content: String,
+}, { collection: "news" });
+
+const placesSchema = new mongoose.Schema({
+  title: String,
+  link: String,
   image: String,
-},{collection : "news"});
-const plancesSchema = new mongoose.Schema({
-  name: String,
-  location: String,
-  image: String,
-  rate: String,
-},{collection : "plances"});
+  category: String,
+  price: String,
+}, { collection: "places" });
 
 const NewsModel = mongoose.model('News', newsSchema);
-const PlancesModel = mongoose.model('Plances', plancesSchema);
+const PlacesModel = mongoose.model('Places', placesSchema);
 
 const getAllNews = async () => {
   try {
     const news = await NewsModel.find({});
-    // console.log('News:', news);
     return news;
   } catch (error) {
     console.error('Error retrieving news:', error.message);
     throw error;
   }
 };
-const getAllPlances = async () => {
+
+const getAllPlaces = async () => {
   try {
-    const plances = await PlancesModel.find({});
-    console.log('Plances:', plances);
-    return plances;
+    const places = await PlacesModel.find({});
+    return places;
   } catch (error) {
-    console.error('Error retrieving news:', error.message);
+    console.error('Error retrieving places:', error.message);
     throw error;
   }
 };
 
-const main = async () => {
-  try {
-    await connectToMongoDB();
-    const news = await getAllNews();
-    const plances = await getAllPlances();
-  } catch (error) {
-    console.error('Main error:', error);
-  }
-};
-
-main();
-
 module.exports = {
   connectToMongoDB,
   getAllNews,
-  getAllPlances
+  getAllPlaces,
+  NewsModel,
+  PlacesModel, // Thêm export cho PlacesModel
 };

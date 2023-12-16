@@ -102,7 +102,7 @@ function Search() {
           <Input
             name="search"
             icon="search-location"
-            placeholder="Madrid,New york,Hue,Ha noi ..."
+            placeholder="Madrid,NewYork,Hue,Hanoi..."
             onSubmitEditing={() => {
               formRef.current?.submitForm()
             }}

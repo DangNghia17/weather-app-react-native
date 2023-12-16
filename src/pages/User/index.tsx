@@ -76,7 +76,7 @@ const User = () => {
       <View style={styles.footer}>
         <Text style={styles.copyright}>WeatherApp</Text>
         <Text style={styles.copyright}>Version: 7.2.5</Text>
-        <Text style={styles.copyright}>By Nghia and Thanh develop</Text>
+        <Text style={styles.copyright}>By Nghia develop</Text>
       </View>
     </SafeAreaView>
   )
