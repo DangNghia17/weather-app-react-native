@@ -1,4 +1,4 @@
-### WeatherApp by Nghia and Thanh
+### WeatherApp by _meaning17 (DangNghia17)
 
 ## Các config trong dự án
 
@@ -42,6 +42,8 @@ npm start
 
 Kiểm Tra Trước Location :
 ***Mở Google Maps để kiểm tra xem đã cập nhật chưa.***
+
+
 Kiểm tra api OpenWeatherMap
 ***Ngoài ra nếu API weather không hoạt động thì cập nhật lại trong file .env.***
 
