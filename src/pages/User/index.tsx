@@ -26,11 +26,11 @@ const User = () => {
       <View style={styles.body}>
         <View style={styles.form}>
           <Text style={styles.label}>Email:</Text>
-          <TextInput style={styles.input} />
+          <TextInput style={styles.input}/>
         </View>
         <View style={styles.form}>
           <Text style={styles.label}>Mật khẩu:</Text>
-          <TextInput style={styles.input} />
+          <TextInput style={styles.input}/>
         </View>
 
         <View style={styles.forgot}>
@@ -38,29 +38,29 @@ const User = () => {
         </View>
 
         <View>
-        <TouchableOpacity style={[styles.button]}>
-          <Text style={styles.buttonText}>ĐĂNG NHẬP</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity style={[styles.button]}>
+            <Text style={styles.buttonText}>ĐĂNG NHẬP</Text>
+          </TouchableOpacity>
+        </View>
 
       </View>
       <View style={styles.or}>
-        <View style={styles.line} />
+        <View style={styles.line}/>
         <Text style={styles.textor}>Hoặc</Text>
-        <View style={styles.line} />
+        <View style={styles.line}/>
       </View>
 
-      <View >
+      <View>
         <TouchableOpacity style={[styles.button1]}>
           <Text style={styles.buttonText1}>Sign in with Google</Text>
-          <Image source={require('../../assets/User/google.png')} style={styles.imageGoogle} />
+          <Image source={require('../../assets/User/google.png')} style={styles.imageGoogle}/>
         </TouchableOpacity>
       </View>
 
       <View>
         <TouchableOpacity style={[styles.button2]}>
           <Text style={styles.buttonText2}>Sign in with Facebook</Text>
-          <Image source={require('../../assets/User/facebook.png')} style={styles.imageFacebook} />
+          <Image source={require('../../assets/User/facebook.png')} style={styles.imageFacebook}/>
         </TouchableOpacity>
       </View>
 
@@ -70,7 +70,7 @@ const User = () => {
       </View>
       <TouchableWithoutFeedback onPress={handleImagePress}>
         <View style={styles.imageContainer}>
-          <Image source={require('../../assets/github.png')} style={styles.imageGithub} />
+          <Image source={require('../../assets/github.png')} style={styles.imageGithub}/>
         </View>
       </TouchableWithoutFeedback>
       <View style={styles.footer}>

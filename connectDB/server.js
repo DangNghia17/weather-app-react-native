@@ -1,9 +1,7 @@
-
-
 const express = require('express');
 const cors = require('cors');
-const { connectToMongoDB, getAllNews, getAllPlaces } = require('./db');
-const { crawlAndSaveData,crawlAndSavePlaces } = require('./crawler');
+const {connectToMongoDB, getAllNews, getAllPlaces} = require('./db');
+const {crawlAndSaveData, crawlAndSavePlaces} = require('./crawler');
 
 const app = express();
 const PORT = 3000;
@@ -17,7 +15,7 @@ app.get('/api/news', async (req, res) => {
     res.json(news);
   } catch (error) {
     console.error('API error:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({error: 'Internal Server Error'});
   }
 });
 
@@ -28,7 +26,7 @@ app.get('/api/places', async (req, res) => {
     res.json(places);
   } catch (error) {
     console.error('API error:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({error: 'Internal Server Error'});
   }
 });
 

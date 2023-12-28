@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 20,
-    alignSelf : "flex-end",
+    alignSelf: "flex-end",
     marginTop: -40,
 
 
@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
 
   },
-  forgot:{
+  forgot: {
     left: 230,
     top: 20,
 
   },
-  forgottext:{
+  forgottext: {
 
     color: "#ffff00",
     fontSize: 14,
@@ -65,88 +65,88 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 50,
     borderWidth: 2,
-    top:40,
+    top: 40,
     backgroundColor: "#00A9FF",
-    marginBottom : -30
+    marginBottom: -30
   },
-  buttonText:{
+  buttonText: {
     color: "#fff",
-    left:135,
+    left: 135,
     top: 13,
     fontWeight: "bold",
   },
 
   button1: {
-    top:70,
+    top: 70,
     margin: 30,
     height: 50,
     borderRadius: 50,
     borderWidth: 2,
     borderColor: "gray",
-    backgroundColor : "white"
+    backgroundColor: "white"
   },
 
 
   button2: {
     margin: 30,
     height: 50,
-    top:20,
+    top: 20,
     borderRadius: 50,
     borderWidth: 2,
     borderColor: "blue",
-    backgroundColor : "#3578E5"
+    backgroundColor: "#3578E5"
 
   },
 
-  buttonText1:{
+  buttonText1: {
     color: "black",
-    left:108,
+    left: 108,
     top: 13,
     fontWeight: "bold",
 
   },
-  buttonText2:{
+  buttonText2: {
     color: "white",
-    left:96,
+    left: 96,
     top: 13,
     fontWeight: "bold",
 
   },
-  or:{
+  or: {
     flexDirection: "row",
     gap: 10,
   },
-  textor:{
+  textor: {
     color: "#fff",
     top: 80,
-    left:65,
+    left: 65,
     fontSize: 16,
     fontWeight: "600",
 
   },
   line: {
     top: 92,
-    left:65,
+    left: 65,
     width: 100,
     height: 0.4,
     backgroundColor: "#D0D4CA",
   },
-  signup:{
+  signup: {
     flexDirection: "row",
     top: 20,
     left: 40,
 
   },
-  textsignup:{
-    color:"#ffff00",
-    left:105,
+  textsignup: {
+    color: "#ffff00",
+    left: 105,
     fontSize: 16,
     fontWeight: "bold",
 
   },
-  donthave:{
+  donthave: {
     color: "#fff",
-    left:100,
+    left: 100,
     fontSize: 16,
     fontWeight: "600",
 
@@ -156,35 +156,35 @@ const styles = StyleSheet.create({
     top: 25,
     color: "#fff",
     fontWeight: "bold",
-    textAlign : "right"
+    textAlign: "right"
   },
   imageGoogle: {
-    height : 60,
-    width : 60,
-    alignSelf : "flex-end",
-    marginTop : -27,
-    marginRight : 13
+    height: 60,
+    width: 60,
+    alignSelf: "flex-end",
+    marginTop: -27,
+    marginRight: 13
   },
- imageFacebook: {
-    height : 37,
-    width : 37,
-    alignSelf : "flex-end",
-    marginTop : -14,
-    marginRight : 23
+  imageFacebook: {
+    height: 37,
+    width: 37,
+    alignSelf: "flex-end",
+    marginTop: -14,
+    marginRight: 23
   },
   imageContainer: {
     backgroundColor: 'white',
     borderRadius: 90,
     overflow: 'hidden',
-    width:70,
-    height :70,
-    alignSelf : "center",
-    marginTop : 50
+    width: 70,
+    height: 70,
+    alignSelf: "center",
+    marginTop: 50
   },
   imageGithub: {
     width: 70,
     height: 70,
-    alignSelf : "center"
+    alignSelf: "center"
   }
 });
 

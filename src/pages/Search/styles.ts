@@ -69,14 +69,14 @@ export const Image = styled.Image`
   height: 200px;
 `
 export const styles = StyleSheet.create({
-  imageSearch:{
-    height : 30 ,
-    width : 30,
+  imageSearch: {
+    height: 30,
+    width: 30,
   },
   imageVoice: {
     width: 18, // Độ rộng của biểu tượng tìm kiếm
     height: 30, // Chiều cao của biểu tượng tìm kiếm
     // resizeMode: 'contain', // Đảm bảo rằng biểu tượng không bị méo
-    marginLeft : 15
+    marginLeft: 15
   }
 })

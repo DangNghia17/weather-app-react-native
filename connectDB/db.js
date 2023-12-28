@@ -22,7 +22,7 @@ const newsSchema = new mongoose.Schema({
   link: String,
   image: String,
   content: String,
-}, { collection: "news" });
+}, {collection: "news"});
 
 const placesSchema = new mongoose.Schema({
   title: String,
@@ -30,7 +30,7 @@ const placesSchema = new mongoose.Schema({
   image: String,
   category: String,
   price: String,
-}, { collection: "places" });
+}, {collection: "places"});
 
 const NewsModel = mongoose.model('News', newsSchema);
 const PlacesModel = mongoose.model('Places', placesSchema);

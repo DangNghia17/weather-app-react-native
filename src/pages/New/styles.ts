@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor : "black"
+    backgroundColor: "black"
   },
   cardContainer: {
     borderRadius: 10,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
-    borderRadius : 5,
+    borderRadius: 5,
     flex: 1,
     height: 120,
 
@@ -32,20 +32,20 @@ const styles = StyleSheet.create({
   roundedImage: {
     width: 100,
     height: 100,
-    marginLeft :10,
-    marginRight :10,
+    marginLeft: 10,
+    marginRight: 10,
     borderRadius: 10,
-    marginBottom : 20,
-    marginTop : 20
+    marginBottom: 20,
+    marginTop: 20
 
   },
   contentContainer: {
     flex: 1,
   },
   contentText: {
-    color : "white",
-    height : 100,
-    marginTop : 10
+    color: "white",
+    height: 100,
+    marginTop: 10
   },
   title: {
     color: "white",

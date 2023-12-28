@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { FlatList, Image, Linking, Text, TextInput, TouchableOpacity, View,Platform  } from "react-native";
-import { fetchDataAndExport, Item, init } from "./data";
+import React, {useEffect, useState} from 'react';
+import {FlatList, Image, Linking, Text, TextInput, TouchableOpacity, View, Platform} from "react-native";
+import {fetchDataAndExport, Item, init} from "./data";
 import styles from "./styles";
-import {Container} from "../../components/Input/styles";
+
 
 init();
 
@@ -10,12 +10,12 @@ const Places = () => {
   const [placesData, setPlacesData] = useState<Item[]>([]);
   const [searchText, setSearchText] = useState<string>('');
 
-  const renderItem = ({ item }: { item: Item }) => (
+  const renderItem = ({item}: { item: Item }) => (
     <View style={styles.cardContainer}>
       <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
         <View style={styles.heightCardContainer}>
-          <Image source={{ uri: item.image }} style={styles.roundedImage} />
-          <Image source={require('../../assets/Plances/fivestar.png')} style={styles.fiveStar} />
+          <Image source={{uri: item.image}} style={styles.roundedImage}/>
+          <Image source={require('../../assets/Plances/fivestar.png')} style={styles.fiveStar}/>
           <Text style={styles.price}>{item.price}</Text>
         </View>
         <View style={styles.contentContainer}>
@@ -34,7 +34,14 @@ const Places = () => {
     const lowerCaseSearchText = searchText.toLowerCase();
     const filteredData = placesData.filter(item => item.title.toLowerCase().includes(lowerCaseSearchText));
 
-    return filteredData.length > 0 ? filteredData : [{ id: 'no-results', title: 'Không tìm thấy kết quả'}];
+    return filteredData.length > 0 ? filteredData : [{
+      id: 'no-results',
+      title: 'Không tìm thấy kết quả',
+      link: '',
+      image: '',
+      category: '',
+      price: ''
+    }];
   };
 
   useEffect(() => {
@@ -61,14 +68,14 @@ const Places = () => {
           onChangeText={text => setSearchText(text)}
         />
         <TouchableOpacity>
-        <Image source={require('../../assets/microphone-solid.png')} style={styles.searchIcon} />
+          <Image source={require('../../assets/microphone-solid.png')} style={styles.searchIcon}/>
         </TouchableOpacity>
       </View>
 
 
       <FlatList
         data={filterPlacesData()}
-        renderItem={({ item }) => renderItem({ item })}
+        renderItem={({item}) => renderItem({item})}
         keyExtractor={(item) => item.id}
         horizontal={false}
       />

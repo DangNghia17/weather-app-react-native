@@ -1,8 +1,8 @@
-import React, { useCallback, useContext, useRef, useState } from 'react'
-import { ActivityIndicator, Alert, ImageBackground } from 'react-native'
+import React, {useCallback, useContext, useRef, useState} from 'react'
+import {ActivityIndicator, Alert, ImageBackground} from 'react-native'
 
-import { FormHandles } from '@unform/core'
-import { Form } from '@unform/mobile'
+import {FormHandles} from '@unform/core'
+import {Form} from '@unform/mobile'
 
 import Input from '../../components/Input'
 import ThemeSwitcher from '../../components/ThemeSwitcher'
@@ -11,7 +11,7 @@ import apiOpenweather from '../../services/apiOpenweather'
 import * as Yup from 'yup'
 
 import WeatherData from '../../types/WeatherData'
-import { WEATHER_API_KEY } from '@env'
+import {WEATHER_API_KEY} from '@env'
 
 import {
   ActivityContainer,
@@ -27,8 +27,8 @@ import {
 } from './styles'
 import getValidationErrors from '../../utils/getValidationErrors'
 import weatherImage from '../../utils/weatherImage'
-import { ThemeContext } from 'styled-components'
-import { capitalize } from '../../utils/capitalize'
+import {ThemeContext} from 'styled-components'
+import {capitalize} from '../../utils/capitalize'
 
 import WorldMap from '../../assets/WorldMap/WorldMap.png'
 
@@ -41,9 +41,9 @@ function Search() {
   const [weatherData, setWeatherData] = useState<null | WeatherData>(null)
   const [loadingData, setLoadingData] = useState(false)
 
-  const { colors } = useContext(ThemeContext)
+  const {colors} = useContext(ThemeContext)
 
-  const handleSearch = useCallback(async (data: SearchFormData, { reset }) => {
+  const handleSearch = useCallback(async (data: SearchFormData, {reset}) => {
     try {
       setLoadingData(true)
       formRef.current?.setErrors({})
@@ -56,7 +56,7 @@ function Search() {
         abortEarly: false,
       })
       const response = await apiOpenweather.get(
-        `/weather?q=${data.search}&appid=${ WEATHER_API_KEY }&units=metric&lang=vi`,
+        `/weather?q=${data.search}&appid=${WEATHER_API_KEY}&units=metric&lang=vi`,
       )
       setWeatherData(response.data)
       setLoadingData(false)
@@ -85,7 +85,7 @@ function Search() {
 
       Alert.alert(
         'Lỗi tìm kiếm',
-     'Đã xảy ra lỗi khi tìm kiếm thành phố, vui lòng thử lại',
+        'Đã xảy ra lỗi khi tìm kiếm thành phố, vui lòng thử lại',
       )
     }
   }, [])
@@ -106,7 +106,7 @@ function Search() {
             onSubmitEditing={() => {
               formRef.current?.submitForm()
             }}
-            containerStyle={{ marginTop: 20 }}
+            containerStyle={{marginTop: 20}}
           />
         </Form>
         <ImageBackground
@@ -130,20 +130,20 @@ function Search() {
                       />
                     )}
                   </ImageView>
-                   <Text style={{ fontSize: 40 }}>
-                     {weatherData.name}, {weatherData.sys.country}
-                   </Text>
-                    <Text style={{ fontSize: 20 }}>{capitalize(weatherData?.weather[0].description)}</Text>
-                      <Text style={{ fontSize: 20 }}>Độ ẩm: {weatherData?.main.humidity}%</Text>
-                       <Text style={{ fontSize: 20 }}>Áp suất: {weatherData?.main.pressure} hPa</Text>
-                     <Text style={{ fontSize: 20 }}>Mực nước biển: {weatherData?.main.sea_level} m</Text>
-                      <Text style={{ fontSize: 15 }}>Cấp độ gió: {weatherData?.wind.deg}°</Text>
-                        <Text style={{ fontSize: 18 }}>Tốc độ gió: {weatherData?.wind.speed} m/s</Text>
+                  <Text style={{fontSize: 40}}>
+                    {weatherData.name}, {weatherData.sys.country}
+                  </Text>
+                  <Text style={{fontSize: 20}}>{capitalize(weatherData?.weather[0].description)}</Text>
+                  <Text style={{fontSize: 20}}>Độ ẩm: {weatherData?.main.humidity}%</Text>
+                  <Text style={{fontSize: 20}}>Áp suất: {weatherData?.main.pressure} hPa</Text>
+                  <Text style={{fontSize: 20}}>Mực nước biển: {weatherData?.main.sea_level} m</Text>
+                  <Text style={{fontSize: 15}}>Cấp độ gió: {weatherData?.wind.deg}°</Text>
+                  <Text style={{fontSize: 18}}>Tốc độ gió: {weatherData?.wind.speed} m/s</Text>
                   <Temperature>
 
                     <TemperatureText>
                       {weatherData?.main.temp.toFixed(0)}
-                      <TemperatureText style={{ color: colors.primary }}>
+                      <TemperatureText style={{color: colors.primary}}>
                         ℃
                       </TemperatureText>
                     </TemperatureText>
@@ -153,7 +153,7 @@ function Search() {
             </>
           ) : (
             <ActivityContainer>
-              <ActivityIndicator size="large" color={colors.text} />
+              <ActivityIndicator size="large" color={colors.text}/>
             </ActivityContainer>
           )}
         </ImageBackground>

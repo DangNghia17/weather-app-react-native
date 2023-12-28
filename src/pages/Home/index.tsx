@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {
   ActivityIndicator,
   Alert,
@@ -12,7 +12,7 @@ import {
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import { format } from 'date-fns';
+import {format} from 'date-fns';
 
 import {
   ActivityContainer,
@@ -33,16 +33,16 @@ import Geolocation from 'react-native-geolocation-service'
 
 import appConfig from '../../../app.json'
 import apiOpenweather from '../../services/apiOpenweather'
-import { capitalize } from '../../utils/capitalize'
+import {capitalize} from '../../utils/capitalize'
 
 import WorldMap from '../../assets/WorldMap/WorldMap.png'
 
 import ThemeSwitcher from '../../components/ThemeSwitcher'
-import { ThemeContext } from 'styled-components'
+import {ThemeContext} from 'styled-components'
 import WeatherData from '../../types/WeatherData'
 import weatherImage from '../../utils/weatherImage'
 
-import { WEATHER_API_KEY } from '@env'
+import {WEATHER_API_KEY} from '@env'
 
 
 function Home() {
@@ -50,7 +50,7 @@ function Home() {
   const [weatherData, setWeatherData] = useState<null | WeatherData>(null)
   const [loadingData, setLoadingData] = useState(false)
 
-  const { colors } = useContext(ThemeContext)
+  const {colors} = useContext(ThemeContext)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,22 +68,22 @@ function Home() {
     }
   }, [location])
 
- async function LoadWeatherData() {
-   setLoadingData(true)
-   try {
-     const { data } = await apiOpenweather.get(
-       `weather?lat=${location?.coords?.latitude}&lon=${location?.coords?.longitude}&appid=${ WEATHER_API_KEY }&units=metric&lang=vi`,
-     )
-     setWeatherData(data);
-     console.log(data);
-   } catch (error) {
-     Alert.alert(
-       'Lỗi kết nối',
-       'Kiểm tra kết nối internet của bạn và thử lại',
-     )
-   }
-   setLoadingData(false)
- }
+  async function LoadWeatherData() {
+    setLoadingData(true)
+    try {
+      const {data} = await apiOpenweather.get(
+        `weather?lat=${location?.coords?.latitude}&lon=${location?.coords?.longitude}&appid=${WEATHER_API_KEY}&units=metric&lang=vi`,
+      )
+      setWeatherData(data);
+      console.log(data);
+    } catch (error) {
+      Alert.alert(
+        'Lỗi kết nối',
+        'Kiểm tra kết nối internet của bạn và thử lại',
+      )
+    }
+    setLoadingData(false)
+  }
 
   const hasPermissionIOS = async () => {
     const openSetting = () => {
@@ -107,8 +107,11 @@ function Home() {
         `Bật Dịch vụ định vị để cho phép "${appConfig.displayName}" để xác định vị trí của bạn.`,
         '',
         [
-          { text: 'Chuyển đến Cài đặt', onPress: openSetting },
-          { text: "Không sử dụng vị trí", onPress: () => {} },
+          {text: 'Chuyển đến Cài đặt', onPress: openSetting},
+          {
+            text: "Không sử dụng vị trí", onPress: () => {
+            }
+          },
         ],
       )
     }
@@ -187,30 +190,29 @@ function Home() {
       },
     )
   }
-const currentDate = new Date();
-const currentHour = currentDate.getHours();
-const currentMinute = currentDate.getMinutes();
-const currentDay = currentDate.getDate();
-const currentMonth = currentDate.getMonth() + 1; // Lưu ý: Tháng trong JavaScript bắt đầu từ 0, nên cần cộng thêm 1
-const currentYear = currentDate.getFullYear();
+  const currentDate = new Date();
+  const currentHour = currentDate.getHours();
+  const currentMinute = currentDate.getMinutes();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.getMonth() + 1; // Lưu ý: Tháng trong JavaScript bắt đầu từ 0, nên cần cộng thêm 1
+  const currentYear = currentDate.getFullYear();
 
-const formattedTime = `${currentHour}:${currentMinute}`;
-const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
-
+  const formattedTime = `${currentHour}:${currentMinute}`;
+  const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
 
 
   return (
     <Container>
       <Header>
         {!loadingData && weatherData && (
-          <View style={{ flexDirection: 'row' }}>
-            <HeaderLocation style={{ fontWeight: 'bold' }}>
+          <View style={{flexDirection: 'row'}}>
+            <HeaderLocation style={{fontWeight: 'bold'}}>
               {weatherData.name},
             </HeaderLocation>
             <HeaderLocation> {weatherData.sys.country}</HeaderLocation>
           </View>
         )}
-        <ThemeSwitcher />
+        <ThemeSwitcher/>
       </Header>
 
       <ImageBackground
@@ -229,23 +231,24 @@ const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
               {weatherData?.main.temp && weatherData?.weather[0].description && (
                 <>
                   <ImageView>
-                          <Text style={{ fontSize: 20 , paddingTop: 160 }}>Giờ hiện tại : {formattedTime} - {formattedDate}</Text>
+                    <Text style={{fontSize: 20, paddingTop: 160}}>Giờ hiện tại
+                      : {formattedTime} - {formattedDate}</Text>
                     {weatherData?.weather[0].icon && (
                       <Image
                         source={weatherImage(weatherData?.weather[0].icon)}
                       />
                     )}
                   </ImageView>
-                 <Text style={{ fontSize: 30 }}>{capitalize(weatherData?.weather[0].description)}</Text>
-                 <Text style={{ fontSize: 20 }}>Độ ẩm: {weatherData?.main.humidity}%</Text>
-                 <Text style={{ fontSize: 20 }}>Áp suất: {weatherData?.main.pressure} hPa</Text>
-                 <Text style={{ fontSize: 15 }}>Cấp độ gió: {weatherData?.wind.deg}°</Text>
-                 <Text style={{ fontSize: 18 }}>Tốc độ gió: {weatherData?.wind.speed} m/s</Text>
+                  <Text style={{fontSize: 30}}>{capitalize(weatherData?.weather[0].description)}</Text>
+                  <Text style={{fontSize: 20}}>Độ ẩm: {weatherData?.main.humidity}%</Text>
+                  <Text style={{fontSize: 20}}>Áp suất: {weatherData?.main.pressure} hPa</Text>
+                  <Text style={{fontSize: 15}}>Cấp độ gió: {weatherData?.wind.deg}°</Text>
+                  <Text style={{fontSize: 18}}>Tốc độ gió: {weatherData?.wind.speed} m/s</Text>
 
 
-                 <TemperatureText>
+                  <TemperatureText>
                     {weatherData?.main.temp.toFixed(0)}
-                    <TemperatureText style={{ color: colors.primary }}>
+                    <TemperatureText style={{color: colors.primary}}>
                       ℃
                     </TemperatureText>
                   </TemperatureText>
@@ -253,7 +256,7 @@ const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
               )}
               <ReloadButton onPress={() => LoadWeatherData()}>
 
-                <Image source={require('../../assets/refresh.png')} style={{width: 40 , height: 40 , marginTop : 30}} />
+                <Image source={require('../../assets/refresh.png')} style={{width: 40, height: 40, marginTop: 30}}/>
 
               </ReloadButton>
             </Temperature>
@@ -261,13 +264,13 @@ const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
             <Footer>
               {weatherData?.main && (
                 <>
-                  <Text style={{ fontSize: 20 }} >
+                  <Text style={{fontSize: 20}}>
                     Thấp nhất: {weatherData?.main.temp_min}
-                    <Text style={{ color: colors.primary , fontSize: 18  }}>℃</Text>
+                    <Text style={{color: colors.primary, fontSize: 18}}>℃</Text>
                   </Text>
-                  <Text style={{ fontSize: 20 }} >
+                  <Text style={{fontSize: 20}}>
                     Cao nhất: {weatherData?.main.temp_max}
-                    <Text style={{ color: colors.primary , fontSize: 18 }}>℃</Text>
+                    <Text style={{color: colors.primary, fontSize: 18}}>℃</Text>
                   </Text>
                 </>
               )}
@@ -275,7 +278,7 @@ const formattedDate = `${currentDay}/${currentMonth}/${currentYear}`;
           </Main>
         ) : (
           <ActivityContainer>
-            <ActivityIndicator size="large" color={colors.text} />
+            <ActivityIndicator size="large" color={colors.text}/>
           </ActivityContainer>
         )}
       </ImageBackground>

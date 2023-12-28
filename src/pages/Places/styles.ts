@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor : "black",
+    backgroundColor: "black",
 
   },
   cardContainer: {
@@ -29,15 +29,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
-    borderRadius : 5,
+    borderRadius: 5,
   },
   roundedImage: {
     width: 200,
     height: 130,
-    marginLeft :10,
-    marginRight :10,
+    marginLeft: 10,
+    marginRight: 10,
     borderRadius: 10,
-    marginTop : 10
+    marginTop: 10
 
   },
   contentContainer: {
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
   },
 
   contentLocationText: {
-    color : "white",
-    alignSelf : "flex-end",
-    marginRight : 10,
-    fontStyle : "italic",
-    marginBottom :12,
-    marginTop :15
+    color: "white",
+    alignSelf: "flex-end",
+    marginRight: 10,
+    fontStyle: "italic",
+    marginBottom: 12,
+    marginTop: 15
   },
   title: {
     color: "white",
@@ -72,23 +72,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   fiveStar: {
-    width : 120,
-    height : 60,
-    alignSelf : "flex-end",
-    marginTop : -130,
-    marginRight : 15,
-    marginBottom : 10
+    width: 120,
+    height: 60,
+    alignSelf: "flex-end",
+    marginTop: -130,
+    marginRight: 15,
+    marginBottom: 10
   },
   price: {
     color: "white",
     fontSize: 15,
-    fontStyle : "italic",
-    alignSelf : "flex-end",
-    marginRight : 10,
+    fontStyle: "italic",
+    alignSelf: "flex-end",
+    marginRight: 10,
 
   },
   heightCardContainer: {
-    height:88
+    height: 88
   },
   searchInput: {
     width: 300,
@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
     width: 30, // Độ rộng của biểu tượng tìm kiếm
     height: 30, // Chiều cao của biểu tượng tìm kiếm
     resizeMode: 'contain', // Đảm bảo rằng biểu tượng không bị méo
-    marginBottom : 13,
-    marginLeft : 15
+    marginBottom: 13,
+    marginLeft: 15
   },
   searchContainer: {
     flexDirection: 'row', // Sắp xếp các phần tử theo chiều ngang

@@ -1,4 +1,4 @@
-import { axios_API_Instance } from "../../services/constants";
+import {axios_API_Instance} from "../../services/constants";
 
 export interface Item {
   id: string;
@@ -30,7 +30,7 @@ export const fetchData = async (): Promise<Item[]> => {
       price: item.price, // Sử dụng trường price
     }));
   } catch (error) {
-    console.error('Fetch data error:', error);
+    console.error('Fetch Places data error:', error);
     throw error;
   }
 };
@@ -41,7 +41,7 @@ export const loadData = async () => {
     const data = await fetchData();
     // console.log('Data:', data);
   } catch (error) {
-    console.error('Error loading data:', error);
+    console.error('Error Places loading data:', error);
   }
 };
 

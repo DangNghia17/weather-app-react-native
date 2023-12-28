@@ -1,11 +1,12 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { connectToMongoDB, NewsModel, PlacesModel } = require('./db'); // Import NewsModel và PlancesModel từ db.js
+const {connectToMongoDB, NewsModel, PlacesModel} = require('./db'); // Import NewsModel và PlancesModel từ db.js
 
 const crawlAndSaveData = async () => {
   try {
     // Thực hiện yêu cầu HTTP để lấy HTML từ trang web
     const response = await axios.get('https://vov.vn/du-bao-thoi-tiet?page=0');
+    // const response = await axios.get('https://vov.vn/search?keyword=thoi+tiet&category=All&date=week');
     const html = response.data;
 
     // Sử dụng Cheerio để phân tích HTML
@@ -19,7 +20,7 @@ const crawlAndSaveData = async () => {
       const image = $(element).find('img').attr('src');
       const content = $(element).find('p').text().trim();
 
-      articles.push({ title, link, image, content });
+      articles.push({title, link, image, content});
     });
 
     // Lưu dữ liệu vào MongoDB
@@ -69,7 +70,7 @@ const crawlAndSavePlaces = async () => {
       const category = $(element).find('.entry-meta .category-link a').text().trim();
       const price = $(element).find('p:contains("VND")').text().trim();
 
-      places.push({ title, link, image, category, price });
+      places.push({title, link, image, category, price});
     });
 
 
